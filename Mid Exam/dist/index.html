@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My Recipe</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+</head>
+
+<body>
+    <input type="text" id="ingredientName" placeholder="Enter ingredient Name">
+    <button id="searchBtn">Search</button>
+
+    <script id="meal-template" type="text/x-handlebars-template">
+        {{#each dataMeals}}
+<div class="container">
+        <div class="meal"> 
+            <p class="mealName"><u>{{this.title}}</u></p>
+            <br>
+            <div class="maelImg">
+                <img id="pictmeal" src="{{this.thumbnail}}" style="width:20em; height:20em;">
+                <br>
+            </div>
+            <div class="ingredientArray"> ingredients:
+                <ul>
+                {{#each this.ingredients}}
+                    <li>{{.}} <br> </li>
+                {{/each}}
+                </ul>
+            </div>
+      
+    </div>
+    </div>
+         {{/each}}
+     </script>
+
+
+    <div class="meals"></div>
+
+    <script src="./handlebars/dist/handlebars.js"></script>
+    <script src="./jquery/dist/jquery.js"></script>
+    <script src="Renderer.js"></script>
+    <script src="main.js"></script>
+
+
+</body>
+
+</html>
